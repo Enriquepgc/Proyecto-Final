@@ -2,279 +2,279 @@ version: 2
 
 models:
   - name: stg_sql_server__addresses
-    description: ""
+    description: "Tabla de staging para direcciones de usuarios."
     columns:
       - name: address_id
         data_type: varchar
-        description: ""
+        description: "Identificador único de la dirección."
 
       - name: zipcode
         data_type: number
-        description: ""
+        description: "Código postal de la dirección."
 
       - name: country
         data_type: varchar
-        description: ""
+        description: "País de la dirección."
 
       - name: address
         data_type: varchar
-        description: ""
+        description: "Detalle de la dirección."
 
       - name: state
         data_type: varchar
-        description: ""
+        description: "Estado o provincia de la dirección."
 
       - name: date_deleted
         data_type: boolean
-        description: ""
+        description: "Indica si la dirección fue eliminada."
 
       - name: date_load
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora de carga del registro."
 
   - name: stg_sql_server__events
-    description: ""
+    description: "Tabla de staging para eventos de usuario en la aplicación."
     columns:
       - name: event_id
         data_type: varchar
-        description: ""
+        description: "Identificador único del evento."
 
       - name: page_url
         data_type: varchar
-        description: ""
+        description: "URL de la página donde ocurrió el evento."
 
       - name: event_type
         data_type: varchar
-        description: ""
+        description: "Tipo de evento (por ejemplo, click, view)."
 
       - name: user_id
         data_type: varchar
-        description: ""
+        description: "Identificador del usuario que generó el evento."
 
       - name: product_id
         data_type: varchar
-        description: ""
+        description: "Identificador del producto relacionado con el evento."
 
       - name: session_id
         data_type: varchar
-        description: ""
+        description: "Identificador de la sesión del usuario."
 
       - name: convert_timezone('utc', created_at)
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora en UTC de la creación del evento."
 
       - name: order_id
         data_type: varchar
-        description: ""
+        description: "Identificador de la orden relacionada con el evento."
 
       - name: date_deleted
         data_type: boolean
-        description: ""
+        description: "Indica si el evento fue eliminado."
 
       - name: date_load
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora de carga del registro."
 
   - name: stg_sql_server__orders
-    description: ""
+    description: "Tabla de staging para órdenes de compra."
     columns:
       - name: order_id
         data_type: varchar
-        description: ""
+        description: "Identificador único de la orden."
 
       - name: created_at_utc
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora en UTC de la creación de la orden."
 
       - name: user_id
         data_type: varchar
-        description: ""
+        description: "Identificador del usuario que realizó la orden."
 
       - name: address_id
         data_type: varchar
-        description: ""
+        description: "Identificador de la dirección asociada a la orden."
 
       - name: order_total_dollars
         data_type: float
-        description: ""
+        description: "Total de la orden en dólares."
 
       - name: order_cost_dollars
         data_type: float
-        description: ""
+        description: "Costo de la orden en dólares."
 
       - name: shipping_cost_dollars
         data_type: float
-        description: ""
+        description: "Costo de envío de la orden en dólares."
 
       - name: status
         data_type: varchar
-        description: ""
+        description: "Estado de la orden."
 
       - name: promo_id
         data_type: varchar
-        description: ""
+        description: "Identificador de la promoción aplicada a la orden."
 
       - name: date_deleted
         data_type: boolean
-        description: ""
+        description: "Indica si la orden fue eliminada."
 
       - name: date_load
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora de carga del registro."
 
   - name: stg_sql_server__order_items
-    description: ""
+    description: "Tabla de staging para los ítems de cada orden."
     columns:
       - name: order_id
         data_type: varchar
-        description: ""
+        description: "Identificador de la orden a la que pertenece el ítem."
 
       - name: product_id
         data_type: varchar
-        description: ""
+        description: "Identificador del producto en la orden."
 
       - name: quantity
         data_type: number
-        description: ""
+        description: "Cantidad del producto en la orden."
 
       - name: date_deleted
         data_type: boolean
-        description: ""
+        description: "Indica si el ítem fue eliminado."
 
       - name: date_load
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora de carga del registro."
 
   - name: stg_sql_server__products
-    description: ""
+    description: "Tabla de staging para productos disponibles."
     columns:
       - name: product_id
         data_type: varchar
-        description: ""
+        description: "Identificador único del producto."
 
       - name: price_dollars
         data_type: float
-        description: ""
+        description: "Precio del producto en dólares."
 
       - name: name
         data_type: varchar
-        description: ""
+        description: "Nombre del producto."
 
       - name: inventory
         data_type: number
-        description: ""
+        description: "Cantidad en inventario del producto."
 
       - name: date_deleted
         data_type: boolean
-        description: ""
+        description: "Indica si el producto fue eliminado."
 
       - name: date_load
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora de carga del registro."
 
   - name: stg_sql_server__promos
-    description: ""
+    description: "Tabla de staging para promociones aplicadas a las órdenes."
     columns:
       - name: promo_id
         data_type: varchar
-        description: ""
+        description: "Identificador único de la promoción."
 
       - name: promo_name
         data_type: varchar
-        description: ""
+        description: "Nombre de la promoción."
 
       - name: discount_dollars
         data_type: number
-        description: ""
+        description: "Descuento en dólares de la promoción."
 
       - name: status_id
         data_type: number
-        description: ""
+        description: "Estado de la promoción."
 
       - name: date_deleted
         data_type: boolean
-        description: ""
+        description: "Indica si la promoción fue eliminada."
 
       - name: date_load
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora de carga del registro."
 
   - name: stg_sql_server__users
-    description: ""
+    description: "Tabla de staging para usuarios registrados."
     columns:
       - name: user_id
         data_type: varchar
-        description: ""
+        description: "Identificador único del usuario."
 
       - name: first_name
         data_type: varchar
-        description: ""
+        description: "Nombre del usuario."
 
       - name: last_name
         data_type: varchar
-        description: ""
+        description: "Apellido del usuario."
 
       - name: phone_number
         data_type: varchar
-        description: ""
+        description: "Número de teléfono del usuario."
 
       - name: email
         data_type: varchar
-        description: ""
+        description: "Correo electrónico del usuario."
 
       - name: total_orders
         data_type: number
-        description: ""
+        description: "Total de órdenes realizadas por el usuario."
 
       - name: address_id
         data_type: varchar
-        description: ""
+        description: "Identificador de la dirección principal del usuario."
 
       - name: updated_at_utc
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora en UTC de la última actualización del usuario."
 
       - name: created_at_utc
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora en UTC de la creación del usuario."
 
       - name: date_deleted
         data_type: boolean
-        description: ""
+        description: "Indica si el usuario fue eliminado."
 
       - name: date_load
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora de carga del registro."
 
   - name: stg_sql_server__tracking
-    description: ""
+    description: "Tabla de staging para información de seguimiento de envíos."
     columns:
       - name: tracking_id
         data_type: varchar
-        description: ""
+        description: "Identificador único del seguimiento."
 
       - name: shipping_service
         data_type: varchar
-        description: ""
+        description: "Servicio de envío utilizado."
         tests:
           - accepted_values:
               values: ["ups", "usps", "fedex", "dhl"]
 
       - name: delivered_at_utc
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora en UTC de la entrega."
 
       - name: estimated_delivery_at_utc
         data_type: timestamp_tz
-        description: ""
+        description: "Fecha y hora en UTC de la entrega estimada."
 
   - name: stg_sql_server__status
-    description: ""
+    description: "Tabla de staging para estados de órdenes y promociones."
     columns:
       - name: status_id
         data_type: number
-        description: ""
+        description: "Identificador del estado."
 
       - name: status
         data_type: varchar
-        description: ""
+        description: "Descripción del estado."
